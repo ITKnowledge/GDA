@@ -1,0 +1,180 @@
+<% include header.ejs %>
+
+
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= title %>
+      <small>Affichage</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="/caisse">Caisse</a></li>
+      <li class="active">Bon d'Approvisionnement</li>
+    </ol>
+  </section>
+
+
+
+<section class="content">
+
+
+  <!-- Default box -->
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title"><%= title %></h3>
+      <a href="/suppliers/add" class="btn btn-sm btn-primary pull-right mymg"><i class="fa fa-fw fa-print"></i></a>
+      <a href="/suppliers/add" class="btn btn-sm btn-primary pull-right mymg">Liste des BAs</a>
+    </div>
+    <div class="box-body">
+      <!-- Start creating your amazing application! -->
+      <div class="row">
+        <div class="col-xs-5">
+          <label for="">Code :</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+
+        <div class="col-xs-2">
+
+        </div>
+
+        <div class="col-xs-5">
+          <label for="">Demendeur :</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-5">
+          <label for="">Engin :</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+
+        <div class="col-xs-2">
+
+        </div>
+
+        <div class="col-xs-5">
+          <label for="">Date :</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-5">
+
+        </div>
+
+        <div class="col-xs-2">
+
+        </div>
+
+        <div class="col-xs-5">
+          <label for="">Observation :</label>
+
+          <textarea type="text" class="form-control" placeholder="" rows="8" cols="10"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">detail du <%= title %></h3>
+
+
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Designation</th>
+              <th>Quantite</th>
+              <th>PU</th>
+              <th>PT/HT</th>
+              <th>TVA</th>
+              <th>PT/TTC</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <% for(i=1; i < 200; i++){%>
+          <tr>
+            <td>designation  <%= title + ' ' + i%> </td>
+            <% var qte = (Math.floor((Math.random() * 10) + 1)).toFixed(0) %>
+            <td><%= qte %></td>
+            <% var pu = (Math.random() * 1000); %>
+            <td><%= pu.toFixed(2) %></td>
+            <td><%= (pu * qte).toFixed(2) %></td>
+            <td><%= ((pu * qte)*0.20).toFixed(2) %> </td>
+            <td><%= ((pu * qte)*1.2).toFixed(2) %> </td>
+          </tr>
+          <%}%>
+
+
+
+
+        </tbody></table>
+
+
+
+
+      </div>
+      <!-- /.box-body -->
+
+
+
+      <div class="box-footer">
+        <div class="form-group col-xs-5 pull-right">
+          <label for="" class="col-sm-2 control-label">Total :</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="" placeholder="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- /.box-footer-->
+  </div>
+  <!-- /.box -->
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+<% include footer.ejs %>
+
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>

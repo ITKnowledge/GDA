@@ -1,0 +1,31 @@
+{
+  "name": "vueproject",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "snyk test"
+  },
+  "dependencies": {
+    "@risingstack/trace": "^2.24.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.15.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "glob": "^7.1.0",
+    "mongoose": "^4.6.1",
+    "mongoose-paginator-simple": "^2.0.0",
+    "morgan": "~1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "snyk": "^1.19.1"
+  }
+}

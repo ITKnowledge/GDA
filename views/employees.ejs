@@ -1,0 +1,91 @@
+<% include header.ejs %>
+
+
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= title %>
+      <small>it all starts here</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Liste des <%= title %></li>
+    </ol>
+  </section>
+
+
+
+<section class="content">
+
+    <div class="box">
+        <div class="box-header">
+          <h3 class="box-title"><%= title %></h3>
+          <a href="/employees/add" class="btn btn-sm btn-primary pull-right"><i class="fa fa-fw fa-plus"></i></a>
+        </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Nom</th>
+                  <th>Prenom</th>
+                  <th>CIN</th>
+                  <th>Telephone</th>
+                  <th>Salaire</th>
+                  <th>Metier</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                  <% for(i=1; i < 200; i++){%>
+                <tr>
+                  <td><%= i + 120 %> </td>
+                  <td>Ahmed</td>
+                  <td>Karim</td>
+                  <td>BE<%= (Math.random() * 1000000).toFixed(0) %></td>
+                  <td>0661<%= (Math.random() * 1000000).toFixed(0) %></td>
+                  <td><%= (Math.random() * 10000).toFixed(2) %></td>
+                  <td>Mecanicien</td>
+                </tr>
+                  <%}%>
+
+
+
+
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+
+              </div>
+
+          </div>
+          <!-- /.box -->
+
+
+
+
+
+</section>
+</div>
+
+
+<% include footer.ejs %>
+
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>

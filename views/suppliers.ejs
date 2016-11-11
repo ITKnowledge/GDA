@@ -1,0 +1,86 @@
+<% include header.ejs %>
+
+
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= title %>
+      <small>it all starts here</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">liste des <%= title %></li>
+    </ol>
+  </section>
+
+
+
+<section class="content">
+
+
+  <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><%= title %></h3>
+        <a href="/suppliers/add" class="btn btn-sm btn-primary pull-right"><i class="fa fa-fw fa-plus"></i></a>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Code</th>
+            <th>Raison Sociale</th>
+            <th>Telephone</th>
+            <th>Email</th>
+          </tr>
+          </thead>
+          <tbody>
+            <% for(i=1; i < 200; i++){%>
+              <tr>
+                <td><%= i + 120 %> </td>
+                <td><%= title.substring(0,title.length - 1) %> <%= i %></td>
+                <td>0661<%= (Math.random() * 1000000).toFixed(0) %></td>
+                <td><%= title.substring(0,title.length - 1) %><%= i %>@gmail.com</td>
+              </tr>
+            <%}%>
+
+          </tfoot>
+        </table>
+      </div>
+      <!-- /.box-body -->
+
+      <div class="box-footer">
+
+      </div>
+
+    </div>
+    <!-- /.box -->
+
+
+
+
+
+
+
+</section>
+</div>
+
+
+<% include footer.ejs %>
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>

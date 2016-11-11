@@ -1,0 +1,105 @@
+<% include header.ejs %>
+
+
+<div class="content-wrapper">
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= title %>
+      <small>it all starts here</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">liste des Clients</li>
+    </ol>
+  </section>
+
+
+
+<section class="content">
+  <!-- Default box -->
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title"><%= title %></h3>
+
+      <a href="/clients/add" class="btn btn-sm btn-primary pull-right"><i class="fa fa-fw fa-plus"></i></a>
+
+    </div>
+    <div class="box-body">
+
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Raison Sociale</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
+                    <th>Fax</th>
+                    <th>RC</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Observation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(i=1; i < 200; i++){%>
+                <tr>
+                  <td><%= i + 120 %></td>
+                  <td><%= title.substring(0,title.length - 1) %> <%= i %></td>
+                  <td>Adresse du <%= title.substring(0,title.length - 1) %> <%= i %></td>
+                  <td>0661<%= (Math.random() * 1000000).toFixed(0) %></td>
+                  <td>0661<%= (Math.random() * 1000000).toFixed(0) %></td>
+                  <td><%= (Math.random() * 1000000).toFixed(0) %></td>
+                  <td><%= title.substring(0,title.length - 1) %><%= i %>@gmail.com</td>
+                  <td>Contact du <%= title.substring(0,title.length - 1) %> <%= i %></td>
+                  <td>Observation sur <%= title.substring(0,title.length - 1) %> <%= i %></td>
+                </tr>
+                <%}%>
+
+
+
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+
+
+          <!-- /.box -->
+
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+
+
+      </div>
+    <!-- /.box-footer-->
+  </div>
+  <!-- /.box -->
+
+
+
+
+
+
+</section>
+</div>
+
+
+<% include footer.ejs %>
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>

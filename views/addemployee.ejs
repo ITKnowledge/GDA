@@ -1,0 +1,131 @@
+<% include header.ejs %>
+<!-- =============================================== -->
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= title %>
+      <small>Gestion d'Approvisionnement</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li class=""><a href="/index"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class=""><a href="/suppliers"><i class="fa fa-dashboard"></i> liste des Clients</a></li>
+      <li class="active"> Ajout Client</a></li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- Default box -->
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Nouveau <%= title %></h3>
+
+
+      </div>
+      <div class="box-body">
+
+        <!--
+        - Code
+        - Raison sociale
+        - Adresse
+        - Tél
+        - Fax
+        - Email
+        - RC
+        - Personne à contacter dans la société
+        - Observation
+      -->
+
+
+
+
+        <form class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">Code :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">Nom :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">Prenom :</label>
+                  <div class="col-sm-10">
+                    <input type="textarea" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">CIN :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">Telephone :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">Salaire :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="" class="col-sm-2 control-label">Metier :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+            </form>
+
+        <!-- Start creating your amazing application! -->
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+          <button type="submit" class="btn btn-sm btn-primary pull-right mymg"><i class="fa fa-fw fa-save"></i></button>
+          <!-- <a href="#" class="btn btn-sm btn-primary pull-right mymg"><i class="fa fa-fw fa-save"></i></a> -->
+          <a href="/employees" class="btn btn-sm btn-primary pull-right mymg">Liste des <%= title %></a>
+
+
+
+      </div>
+      <!-- /.box-footer-->
+    </div>
+    <!-- /.box -->
+
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+<% include footer.ejs %>
